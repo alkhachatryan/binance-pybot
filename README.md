@@ -3,6 +3,9 @@
 
 A simple bot for a trading on Binance with a simple algorithm.
 
+![image](https://user-images.githubusercontent.com/22774727/202932524-2967f43d-14fa-4e0f-8f75-0056d7f7e05e.png)
+
+
 ## Philosophy 
 I decided to start trading on Binance with BTC (or something similar) + USDT. Since I am new to trading and the financial market, I decided to start trading with a simple algorithm: buy BTC (or whatever) at X price and then immediately sell it at X + a few cents price. Since there is no commission on BTCUSDT, this algorithm works like a charm. But doing it manually will take a lot of time and effort, so I decided to make a bot that will do it for me. The only risk of trading with this algorithm is that the bot (or you) will buy BTC for, say, $16,600 and the price will immediately fall below $16,600 forever :)
 But as it's a Binance and BTC, the price grows up and falls down very fast in milliseconds and there is a real profit.
