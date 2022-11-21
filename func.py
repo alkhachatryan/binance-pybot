@@ -23,19 +23,20 @@ def get_free_balance_of(coin):
 
 def create_sell_order(price_to_sell_with, coin_to_buy, symbol):
     coin_to_buy_balance = get_free_balance_of(coin_to_buy)
-
-    res = send_signed_request('POST', 'order', {
+    payload = {
         'symbol': symbol,
         'side': 'sell',
         'type': 'limit',
         'quantity': "%.5f" % coin_to_buy_balance,
         'price': "%.5f" % price_to_sell_with,
         'timeInForce': 'GTC'
-    })
+    }
+
+    res = send_signed_request('POST', 'order', payload)
 
     # Got an error from Binance API
     if 'code' in res:
-        log(res)
+        log({res, payload})
         sys.exit(1)
 
     log('Created sell order ' + str(coin_to_buy_balance) + ' with price ' + str(price_to_sell_with))
